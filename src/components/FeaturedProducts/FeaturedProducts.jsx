@@ -1,0 +1,61 @@
+import React from 'react'
+import './FeaturedProducts.scss'
+import Card from '../Card/Card';
+
+const FeaturedProducts = ({type}) => {
+
+    const data = [
+        {
+            id: 1,
+            img: "img/clothes/pexels-engin-akyurt-1642228.jpg",
+            img2: "img/clothes/pexels-evg-kowalievska-1055691.jpg",
+            title: "Long Sleeve Graphic T-shorts",
+            isNew: true,
+            oldPrice: 19,
+            newPrice: 12,
+        },
+        {
+            id: 2,
+            img: "img/clothes/pexels-evg-kowalievska-1055691.jpg",
+            title: "Long Sleeve Graphic T-shorts",
+            isNew: true,
+            oldPrice: 20,
+            newPrice: 15,
+        },
+        {
+            id: 3,
+            img: "img/clothes/pexels-godisable-jacob-932405.jpg",
+            title: "Long Sleeve Graphic T-shorts",
+            isNew: false,
+            oldPrice: 30,
+            newPrice: 24,
+        },
+        {
+            id: 4,
+            img: "img/clothes/pexels-marlene-leppänen-1183266.jpg",
+            title: "Long Sleeve Graphic T-shorts",
+            isNew: false,
+            oldPrice: 10,
+            newPrice: 5,
+        },
+
+    ];
+
+  return (
+    <div className='featuredProducts'>
+        <div className="top">
+            <h1>{type} products</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quod porro earum doloribus illo dolore eaque enim sed laudantium maiores nostrum repellendus molestiae dolorum reiciendis, delectus consequatur architecto rem non?
+            </p>
+        </div>
+        <div className="bottom">
+            {data.map(item=>(
+                <Card item={item} key={item.id}/>
+            ))}
+        </div>
+    </div>
+  )
+}
+
+export default FeaturedProducts
